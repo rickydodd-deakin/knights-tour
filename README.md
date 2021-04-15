@@ -3,6 +3,7 @@
 * Patrick Wright
 * Devin Jayasinghe
 * Ricky Dodd
+* Dominic Butterss
 
 ## How To Run
 Subject to change. This acts as a filler for some necessary information.
