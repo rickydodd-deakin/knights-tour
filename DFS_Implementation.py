@@ -58,8 +58,6 @@ def perform_tour(n, u, limit):
     # has stepped over it).
     G.nodes[u]['path'] = "yes"
     path.append(u)
-    
-    print(path)
 
     if n < limit:
         connected_list = [item for item in G.neighbors(u)]
