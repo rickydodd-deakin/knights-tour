@@ -72,12 +72,3 @@ def perform_tour(n, u, limit):
     else:
         goal_state = True
     return goal_state
-
-'''
-    perform_dfs() generates a graph for a 6 x 6 board, by calling generate_graph(), and then performs a tour
-    on that graph, by calling perform_tour(), and then prints the results upon termination.
-'''
-def perform_dfs():
-    generate_graph(6)
-    perform_tour(0, (0,0), len(G))
-    print(path)
