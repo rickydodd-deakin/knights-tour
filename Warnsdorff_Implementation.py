@@ -8,7 +8,6 @@ from Shared_Core import *
 import matplotlib.pyplot as plt
 #change starting cell to 1
 '''
-*********THIS IS ALL FOR TESTING PURPOSES TO MATCH OUTPUTS************
 #this is the hardcoded 8x8 board i started with
 #the starting cell for the knight is set to 1
 #to be updated with Ricky's utility method
@@ -57,27 +56,28 @@ def Warnsdorff_Implementation(count, position, limit, board_size):
     #append starting position to the final list
     path.append(position)
     print('the current path is', path)
+    #create move list for starting position
+    move_list = legal_moves(board_size, position)
+    #loop until journey is complete
     for i in range(limit):
-        print('position is set to', position)
-        move_list = legal_moves(board_size, position)
         print('move_list now includes', move_list)
         #initially set minimum to first element in possibility list
         minimum = move_list[0]
         print('minimum is now set to', minimum)
         #traverse list to see if there is a minimum smaller than current minimum
         for p in move_list:       
-            #HELP HERE - i need to check to see if the tuples of the move_list are less than the minimum, but i dont know how
-            if (len(move_list(p[0], p[1])) <= len(minimum(p[0], p[1]))):
+            #if length of p is less or equal to length of minimum, update minimum to equal p
+            if (len(p) <= len(minimum)):
                 minimum = p
         #move knight to new position and mark it as visited
+        move_list = legal_moves(board_size, minimum)
         G.nodes[minimum]['path'] = "yes"
         path.append(minimum)
         #increase counter
         count += 1
-
+    print('final path is ', path)
 
 '''
-*********this is for testing purposes to try and match outputs****************
 def solve():
     counter = 2
     x = 0
@@ -85,11 +85,7 @@ def solve():
     for i in range(63):
         pos = get_possibilities(x, y)
         minimum = pos[0]
-        print('minimum is')
-        print(minimum)
         for p in pos:
-            print('len of get poss p0', p[0], 'and p1', p[1], 'are', len(get_possibilities(p[0], p[1])))
-            print('len of get poss min0', minimum[0], 'and min1', minimum[1], 'are', len(get_possibilities(minimum[0], minimum[1])))
             if len(get_possibilities(p[0], p[1])) <= len(get_possibilities(minimum[0], minimum[1])):
                 minimum = p
         x = minimum[0]
