@@ -28,7 +28,7 @@ Our execution of Warnsdorff's Rule applies to an 8x8 (0 through 7) gameboard, wi
 foo@bar:~$ python Execute_DFS_Implementation.py
 ```
 
-#### Partial Scale, Determined, Finite Number of Steps That do not Give the Goal State
+#### Partial Scale, Determined, Finite Number of Steps That Do Not Give the Goal State
 Run *Partial_DFS_Implementation.py*, via *python Partial_DFS_Implementation.py* from the directory (*python* may be *python3* depending on your environment).
 ```console
 foo@bar:~$ python Partial_DFS_Implementation.py
