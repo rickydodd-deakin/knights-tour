@@ -5,6 +5,10 @@
     * Contributed to by: Patrick Wright
 '''
 #change starting cell to 1
+'''
+this is the hardcoded 8x8 board i started with
+the starting cell for the knight is set to 1
+to be updated with Ricky's utility method
 chess_board = [[1,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0],
@@ -13,14 +17,17 @@ chess_board = [[1,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0]]
+'''
 
+#this method prints the current state of the board
 def print_board():
     for i in range(8):
         for j in range(8):
             print(chess_board[i][j], end=" ")
         print("\n")
 
-
+'''
+#this method gets the current possibilities - update with Ricky's method
 def get_possibilities(x, y):
     #possible moves
     possible_x = (2, 1, 2, 1, -2, -1, -2, -1)
@@ -35,6 +42,7 @@ def get_possibilities(x, y):
             #print(x+possible_x[i], y+possible_y[i])
     
     return possibilities
+'''
 
 def solve():
     #start counter from second position
