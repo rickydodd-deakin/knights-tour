@@ -23,6 +23,7 @@ Our execution of Warnsdorff's Rule applies to an 8x8 (0 through 7) gameboard, wi
 ## How To Run
 ### Executing Depth-First-Search
 #### Full Scale, on a 6x6 Gameboard
+**THIS ACTION IS NOT RECOMMENDED**
 Run *Execute_DFS_Implementation.py*, via *python Execute_DFS_Implementation* from the directory (*python* may be *python3* depending on your environment.
 
 #### Partial Scale, Determined, Finite Number of Steps That do not Give the Goal State
