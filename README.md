@@ -10,8 +10,8 @@ Given an N x N chessboard, a knight (the game piece) performs a sequence of move
 
 ## Dependencies
 * Python3
-* Python library (available via pip) NetworkX
-* MatPlotLib
+* NetworkX (available via pip)
+* MatPlotLib (available via pip)
 
 ## Differences in Gameboards
 ### Depth-First-Search
