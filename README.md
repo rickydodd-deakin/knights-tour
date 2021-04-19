@@ -11,7 +11,7 @@ Given an N x N chessboard, a knight (the game piece) performs a sequence of move
 ## Dependencies
 * Python3
 * NetworkX (available via pip)
-* MatPlotLib (available via pip)
+* MatPlotLib (available via pip) (this dependency is **not** necessary right now, and hasn't been, but has been left here for now just incase)
 
 ## Differences in Gameboards
 ### Depth-First-Search
@@ -23,12 +23,20 @@ Our execution of Warnsdorff's Rule applies to an 8x8 (0 through 7) gameboard, wi
 ## How To Run
 ### Executing Depth-First-Search
 #### Full Scale, on a 6x6 Gameboard
-**THIS ACTION IS NOT RECOMMENDED**
-Run *Execute_DFS_Implementation.py*, via *python Execute_DFS_Implementation* from the directory (*python* may be *python3* depending on your environment.
+**THIS ACTION IS NOT RECOMMENDED!** Run *Execute_DFS_Implementation.py*, via *python Execute_DFS_Implementation.py* from the directory (*python* may be *python3* depending on your environment).
+```console
+foo@bar:~$ python Execute_DFS_Implementation.py
+```
 
 #### Partial Scale, Determined, Finite Number of Steps That do not Give the Goal State
-Run *Partial_DFS_Implementation.py*, via *python Execute_DFS_Implementation* from the directory (*python* may be *python3* depending on your environment.
+Run *Partial_DFS_Implementation.py*, via *python Partial_DFS_Implementation.py* from the directory (*python* may be *python3* depending on your environment).
+```console
+foo@bar:~$ python Partial_DFS_Implementation.py
+```
 
 ### Executing Warndorff's Rule
 #### Full Scale, on an 8x8 Gameboard
-Run *Execute_Warnsdorff_Implementation.py*, via *python Execute_DFS_Implementation* from the directory (*python* may be *python3* depending on your environment.
+Run *Execute_Warnsdorff_Implementation.py*, via *python Execute_Warnsdorff_Implementation.py* from the directory (*python* may be *python3* depending on your environment).
+```console
+foo@bar:~$ python Execute_Warnsdorff_Implementation.py
+```
