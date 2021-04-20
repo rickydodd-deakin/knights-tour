@@ -1,5 +1,6 @@
 '''
-    * Interrupted variant of depth-first-search, to see some of the output.
+    * Interrupted variant of depth-first-search, to see some of the output. Does NOT give the goal state.
+    * Purely illustrative.
     * Contributed to by: Ricky Dodd (220010849)
 '''
 import networkx as nx
