@@ -5,7 +5,7 @@
 from Warnsdorff_Implementation import *
 
 def perform_warnsdorff():
-    board_size = 8
+    board_size = 6
 
     generate_graph(board_size)
     Warnsdorff_Implementation(0, (0,0), len(G), board_size)
