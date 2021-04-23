@@ -11,19 +11,20 @@ from Shared_Core import *
 path = [] # list and, when the goal state is achieved, it will contain the successful path
 
 '''
-    perform_tour(n, u, limit) take the arguments n, u, and limit, such that n is 0, u is the tuple (row,column)
-    corresponding to a knight game piece, and limit is the total number of tiles of the board.
+    perform_tour(n, vertex, limit) take the arguments n, vertex, and limit, such that n is 0, vertex is the tuple (row,column)
+    corresponding to a knight game piece, and limit is the total number of tiles of the board (which can be given as the length of the graph.
     Returns a boolean value of True when the goal state is achieved.
 '''
-def perform_tour(n, u, limit):
+def perform_tour(n, vertex, limit):
     # attribute names are used to differentiate between what's currently *considered* (tension of considered)
     # part of the correct path and what hasn't been searched (or been deemed not the correct vertex if variable i
     # has stepped over it).
-    G.nodes[u]['path'] = "yes"
-    path.append(u)
+    G.nodes[vertex]['path'] = "yes"
+    path.append(vertex)
 
+    # if a path has been established that is exactly equal to the limit
     if n < limit:
-        connected_list = [item for item in G.neighbors(u)]
+        connected_list = [item for item in G.neighbors(vertex)]
         i = 0
         goal_state = False
         while i < len(connected_list) and not goal_state:
