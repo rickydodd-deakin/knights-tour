@@ -13,8 +13,10 @@ import matplotlib.pyplot as plt
 path = []
 
 def Warnsdorff_Implementation(count, position, limit, board_size):
+    #variables
     nextMove = position
     move_list = 0
+    #an array that stores restore points if the algorithm runs into a dead end
     critical_point = []
     #set path of starting position to value 'Yes'
     G.nodes[position]['path'] = "yes"
@@ -22,18 +24,20 @@ def Warnsdorff_Implementation(count, position, limit, board_size):
     path.append(position)
     #loop until journey is complete
     while(count < limit-1):
+        #number of restore points used
         attempts = 0
         #create a move list from our current position
         move_list = legal_moves(board_size,nextMove)
         #order the list from least neighbours to most neighbours
         orderedNeighbours_dict = Ordering_Neighbours(move_list)
         orderedNeighbours = list(orderedNeighbours_dict.keys())
-        #if no options left call first item in critical path, otherwise continue as normal
+        #if no available moves left call critical_point[attempts] item in array of restore points, otherwise continue as normal
         if(len(orderedNeighbours) == 0):
             nextMove = no_options_left(attempts, path, orderedNeighbours_values, critical_point)
         else:
             nextMove = orderedNeighbours[0]
-        #saving critical points
+        #if there is more than one item in the orderedNeighbours list, check if any have the same number of neighbours and
+        #store a restore point of the first instance found
         if(len(orderedNeighbours) > 1):
             temp_store = 0
             temp_store = save_critical_point(orderedNeighbours_dict)
@@ -79,16 +83,16 @@ def Ordering_Neighbours(move_list):
     #return the list
     return sorted_d
 
-
 def no_options_left(attempts, path, orderedNeighbours_values, critical_point): 
     nextMove = 0
     #if there are no available options left
-    if(orderedNeighbours_values == attempts):
+    if(orderedNeighbours_values == 0):
         #for potentially the entire path
         for r in path:
-            #if the last index in path
+            #if the last index in path is not a restore point, pop it from the path, and reset visited status to 'no'
             if(path[len(path)-1] != critical_point[attempts]):
                     G.nodes[path.pop()]['path'] = "no"
+            #if the last index is a restore point, set next move to that point, and set that point to null in the restore point array
             else: 
                 nextMove = critical_point[attempts]
                 critical_point[attempts] = null
